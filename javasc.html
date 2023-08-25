@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>DOM method</title>
+	<link rel="stylesheet" type="text/css" href="by1.css">
+</head>
+ <link rel="stylesheet" type="text/css" href="jscript.css">
+<body>
+	<div class="block">
+		<h1>ElementById</h1>
+		<h2>Click button change link!</h2>
+		<button onclick="cl()">Change link</button>
+		<a id="l1" href="https://www.apps.disneyplus.com/ph/home">DISNEY PLUS+</a>
+	</div>
+
+	<div class="block">
+		<h1>ElementbyClassname</h1>
+		<h2>Click button complete texts!</h2>
+		<button onclick="ct()">Change text</button>
+		<div class="l2">
+			<p class="l2.1">YOU---?</p>
+			<p class="l2.1">GOO---?</p>
+			<p class="l2.1">NET----?</p>
+		</div>
+	</div>
+
+	<div class="block">
+		<h1>ElementByTag</h1>
+		<h2>Click button to change text colors!</h2>
+		<button onclick="cb()">Change text colors</button>
+		<h3>BROWN</h3>
+		<h3>BLUE</h3>
+		<h3>RED</h3>
+	</div>
+
+	<div class="block">
+		<h1>tQuerySelector</h1>
+		<h2>Click button to change background!</h2>
+		<button onclick="cg()">Change background</button>
+	</div>
+
+
+</body>
+<script type="text/javascript">
+	function cl(){
+		const link1 = document.getElementById("l1");
+		link1.href = "https://www.netflix.com/browse";
+		link1.style.textDecoration = "none";
+		link1.innerHTML = "NETFLIX";
+	}
+
+	function ct() {
+	  const list = document.getElementsByClassName("l2")[0];
+	  list.getElementsByClassName("l2.1")[0].innerHTML = "YOUTUBE";
+	  list.getElementsByClassName("l2.1")[1].innerHTML = "GOOGLE";
+	  list.getElementsByClassName("l2.1")[2].innerHTML = "NETFLIX";
+	}
+
+	function cb(){
+		const col = document.getElementsByTagName("h3");
+		col[0].style.color = "Brown";
+		col[1].style.color = "Blue";
+		col[2].style.color = "Red";
+	}
+
+	function cg(){
+		const back = document.querySelector("body");
+		back.style.backgroundColor = "#272727";
+	}
+</script>
+</html>
